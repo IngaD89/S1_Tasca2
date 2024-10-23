@@ -34,6 +34,7 @@ public class Main {
                         Entry.readByte("Introduce un byte");
                     }catch (InputMismatchException e){
                         System.out.println("Error: Byte válido es entre -128 y 127");
+                        Entry.scanner.nextLine();
                     }
                     break;
                 case 2:
@@ -41,6 +42,7 @@ public class Main {
                         Entry.readInt("Introduce un Int");
                     }catch (InputMismatchException e){
                         System.out.println("Error: Int válido es entre –2,147,483,648 y 2,147,483,647");
+                        Entry.scanner.nextLine();
                     }
                     break;
                 case 3:
@@ -48,6 +50,7 @@ public class Main {
                         Entry.readFloat("Introduce un Float");
                     }catch (InputMismatchException e){
                         System.out.println("Error: Float válido es separado por ',' ");
+                        Entry.scanner.nextLine();
                     }
                     break;
                 case 4:
@@ -55,6 +58,7 @@ public class Main {
                         Entry.readDouble("Introduce un Double");
                     }catch (InputMismatchException e){
                         System.out.println("Error: Double válido es separado por ',' ");
+                        Entry.scanner.nextLine();
                     }
                     break;
                 case 5:
@@ -62,6 +66,7 @@ public class Main {
                         Entry.readChar("Introduce un caracter");
                     }catch (CharLengthException e){
                         System.out.println("Error: Formato inválido, introduce una sola letra");
+                        Entry.scanner.nextLine();
                     }
                     break;
                 case 6:
@@ -81,6 +86,8 @@ public class Main {
                 case 8:
                     System.out.println("Vuelva pronto");
                     break;
+                default:
+                    System.out.println("Debes escoger una opción válida entre 1 y 8");
             }
 
         }while (option != 8);

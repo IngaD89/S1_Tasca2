@@ -4,11 +4,6 @@ public class Main {
     public static void main(String[] args) {
 
         Sales sales = new Sales();
-        Product product = new Product("producto 1", 20);
-        Product product2 = new Product("producto 2", 40);
-
-       // sales.setProducts(product);
-       // sales.setProducts(product2);
 
         try {
             System.out.println(sales.calculateTotal());

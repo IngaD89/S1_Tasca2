@@ -4,10 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Entry {
-    static private final Scanner scanner = new Scanner(System.in);
+    static public final Scanner scanner = new Scanner(System.in);
 
     public static byte readByte(String msg) throws InputMismatchException {
-        scanner.nextLine();
         byte number = 0;
         System.out.println(msg);
         number = scanner.nextByte();
@@ -15,7 +14,6 @@ public class Entry {
     }
 
     public static int readInt(String msg) throws InputMismatchException {
-        scanner.nextLine();
         int number = 0;
         System.out.println(msg);
         number = scanner.nextInt();
@@ -24,7 +22,6 @@ public class Entry {
     }
 
     public static float readFloat(String msg) throws InputMismatchException {
-        scanner.nextLine();
         float number = 0;
         System.out.println(msg);
         number = scanner.nextFloat();
@@ -33,7 +30,6 @@ public class Entry {
     }
 
     public static double readDouble(String msg) throws InputMismatchException {
-        scanner.nextLine();
         double number = 0;
         System.out.println(msg);
         number = scanner.nextDouble();
@@ -42,7 +38,6 @@ public class Entry {
     }
 
     public static char readChar(String msg) throws CharLengthException {
-        scanner.nextLine();
         char letter = ' ';
         String character;
 
@@ -60,7 +55,6 @@ public class Entry {
     }
 
     public static String readString(String msg) throws EmptyTextException {
-        scanner.nextLine();
 
         String text = "";
         System.out.println(msg);
@@ -74,8 +68,6 @@ public class Entry {
     }
 
     public static boolean readBoolean(String msg) throws IncorrectDataException {
-        scanner.nextLine();
-
         char letter = ' ';
         boolean trueOFalse = false;
 
