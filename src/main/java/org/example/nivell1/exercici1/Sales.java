@@ -27,14 +27,13 @@ public class Sales {
         return totalPrice;
     }
 
-    public  double calculateTotal() throws EmptySaleException {
-        if(products.isEmpty()){
+    public double calculateTotal() throws EmptySaleException {
+        if (products.isEmpty()) {
             throw new EmptySaleException();
-        } else {
-            totalPrice = 0;
-            for(Product product : products){
-                this.totalPrice += product.getPrice();
-            }
+        }
+        totalPrice = 0;
+        for (Product product : products) {
+            this.totalPrice += product.getPrice();
         }
         return this.totalPrice;
     }

@@ -143,6 +143,7 @@ public class MovieManagement {
         int row = scanner.nextInt();
         scanner.nextLine();
         if(row < 1 || row > movie.getTotalRow()){
+            System.out.println("El numero de fila debe ser entre 1 y " + movie.getTotalRow());
             throw new IncorrectRowException();
         }
         return row;
@@ -153,6 +154,7 @@ public class MovieManagement {
         int seat = scanner.nextInt();
         scanner.nextLine();
         if(seat < 1 || seat > movie.getSeatForRow()){
+            System.out.println("El numero de aseinto debe ser entre 1 y " + movie.getSeatForRow());
             throw new IncorrectSeatException();
         }
         return seat;

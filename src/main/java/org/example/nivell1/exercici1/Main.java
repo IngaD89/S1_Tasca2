@@ -16,7 +16,7 @@ public class Main {
                 System.out.println(sales.getProducts().get(i));
             }
         } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error: elemento que estas buscando no existe. " + e.getMessage());
         }
     }
 }

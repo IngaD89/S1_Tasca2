@@ -1,4 +1,4 @@
-package org.example.nivell2.excericici1;
+package org.example.nivell2.excericici1.exceptions;
 
 public class EmptyTextException extends Exception{
     public EmptyTextException() {

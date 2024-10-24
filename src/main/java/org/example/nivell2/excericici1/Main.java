@@ -1,14 +1,15 @@
 package org.example.nivell2.excericici1;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+    private static final EntryHandler ENTRY_HANDLER = new EntryHandler();
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
-
-        int option = 0;
+        int option;
 
         do {
             System.out.println("""
@@ -27,70 +28,21 @@ public class Main {
             option = scanner.nextInt();
             scanner.nextLine();
 
-            switch (option){
-
-                case 1:
-                    try {
-                        Entry.readByte("Introduce un byte");
-                    }catch (InputMismatchException e){
-                        System.out.println("Error: Byte válido es entre -128 y 127");
-                        Entry.scanner.nextLine();
-                    }
-                    break;
-                case 2:
-                    try {
-                        Entry.readInt("Introduce un Int");
-                    }catch (InputMismatchException e){
-                        System.out.println("Error: Int válido es entre –2,147,483,648 y 2,147,483,647");
-                        Entry.scanner.nextLine();
-                    }
-                    break;
-                case 3:
-                    try {
-                        Entry.readFloat("Introduce un Float");
-                    }catch (InputMismatchException e){
-                        System.out.println("Error: Float válido es separado por ',' ");
-                        Entry.scanner.nextLine();
-                    }
-                    break;
-                case 4:
-                    try {
-                        Entry.readDouble("Introduce un Double");
-                    }catch (InputMismatchException e){
-                        System.out.println("Error: Double válido es separado por ',' ");
-                        Entry.scanner.nextLine();
-                    }
-                    break;
-                case 5:
-                    try {
-                        Entry.readChar("Introduce un caracter");
-                    }catch (CharLengthException e){
-                        System.out.println("Error: Formato inválido, introduce una sola letra");
-                        Entry.scanner.nextLine();
-                    }
-                    break;
-                case 6:
-                    try{
-                        Entry.readString("Introduce String");
-                    } catch (EmptyTextException e){
-                        System.out.println("Error: Texto no puede ser vacio");
-                    }
-                    break;
-                case 7:
-                    try {
-                        Entry.readBoolean("Introduce Si o No");
-                    } catch (IncorrectDataException e){
-                        System.out.println("Respuesta incorrecta. Debes responder Sí o No");
-                    }
-                    break;
-                case 8:
-                    System.out.println("Vuelva pronto");
-                    break;
-                default:
-                    System.out.println("Debes escoger una opción válida entre 1 y 8");
+            switch (option) {
+                case 1 -> ENTRY_HANDLER.handleByte();
+                case 2 -> ENTRY_HANDLER.handleInt();
+                case 3 -> ENTRY_HANDLER.handleFloat();
+                case 4 -> ENTRY_HANDLER.handleDouble();
+                case 5 -> ENTRY_HANDLER.handleChar();
+                case 6 -> ENTRY_HANDLER.handleString();
+                case 7 -> ENTRY_HANDLER.handleBoolean();
+                case 8 -> System.out.println("Vuelva pronto");
+                default -> System.out.println("Debes escoger una opción válida entre 1 y 8");
             }
 
-        }while (option != 8);
+        } while (option != 8);
 
     }
+
+
 }

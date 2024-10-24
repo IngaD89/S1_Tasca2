@@ -1,44 +1,41 @@
 package org.example.nivell2.excericici1;
 
+import org.example.nivell2.excericici1.exceptions.CharLengthException;
+import org.example.nivell2.excericici1.exceptions.EmptyTextException;
+import org.example.nivell2.excericici1.exceptions.IncorrectDataException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Entry {
-    static public final Scanner scanner = new Scanner(System.in);
+     public static final Scanner scanner = new Scanner(System.in);
 
-    public static byte readByte(String msg) throws InputMismatchException {
-        byte number = 0;
+    public  void readByte(String msg) throws InputMismatchException {
         System.out.println(msg);
-        number = scanner.nextByte();
-        return number;
+        byte number = scanner.nextByte();
+        System.out.println("Byte introducido es " + number);
     }
 
-    public static int readInt(String msg) throws InputMismatchException {
-        int number = 0;
+    public  void readInt(String msg) throws InputMismatchException {
         System.out.println(msg);
-        number = scanner.nextInt();
+        int number = scanner.nextInt();
         System.out.println("Int introducido es " + number);
-        return number;
     }
 
-    public static float readFloat(String msg) throws InputMismatchException {
-        float number = 0;
+    public  void readFloat(String msg) throws InputMismatchException {
         System.out.println(msg);
-        number = scanner.nextFloat();
+        float number = scanner.nextFloat();
         System.out.println("Float introducido es " + number);
-        return number;
     }
 
-    public static double readDouble(String msg) throws InputMismatchException {
-        double number = 0;
+    public  void readDouble(String msg) throws InputMismatchException {
         System.out.println(msg);
-        number = scanner.nextDouble();
+        double number = scanner.nextDouble();
         System.out.println("Double introducido es " + number);
-        return number;
     }
 
-    public static char readChar(String msg) throws CharLengthException {
-        char letter = ' ';
+    public  void readChar(String msg) throws CharLengthException {
+        char letter;
         String character;
 
         System.out.println(msg);
@@ -51,12 +48,11 @@ public class Entry {
             System.out.println("La letra introducida es " + letter);
         }
 
-        return letter;
     }
 
-    public static String readString(String msg) throws EmptyTextException {
+    public  void readString(String msg) throws EmptyTextException {
 
-        String text = "";
+        String text;
         System.out.println(msg);
         text = scanner.nextLine();
 
@@ -64,25 +60,20 @@ public class Entry {
             throw new EmptyTextException();
         }
         System.out.println("Texto introducido es: " + text);
-        return text;
     }
 
-    public static boolean readBoolean(String msg) throws IncorrectDataException {
+    public  void readBoolean(String msg) throws IncorrectDataException {
         char letter = ' ';
-        boolean trueOFalse = false;
 
         System.out.println(msg);
         letter = scanner.next().charAt(0);
 
         if (letter == 's' || letter == 'S') {
-            trueOFalse = true;
             System.out.println("Boolean iguala a true");
         } else if (letter == 'n' || letter == 'N') {
-            trueOFalse = false;
             System.out.println("Boolean iguala a false");
         } else {
             throw new IncorrectDataException();
         }
-        return trueOFalse;
     }
 }
